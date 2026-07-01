@@ -1,4 +1,4 @@
-<img src="./window.png">
+<img src="./TepeGoz/TepeGoz/window.png">
 <h1>👁️ TepeGoz | OSINT Aracı</h1>
 <p>TepeGoz, kullanıcı adlarını popüler sosyal medya platformlarında hızlı bir şekilde taramak için geliştirilmiş, hafif ve taşınabilir bir OSINT (Açık Kaynak İstihbaratı) aracıdır.</p>
 <h2>🚀 Özellikler</h2>
