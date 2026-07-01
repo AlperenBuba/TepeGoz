@@ -13,14 +13,10 @@ namespace TepeGoz
     public partial class Form1 : Form
     {
         string filePath = "sites.json";
-
-        // ListBox'ta hem isim hem link tutmak için yardımcı sınıf
         public class SiteItem
         {
             public string Name { get; set; }
             public string Url { get; set; }
-
-            // ListBox'ta görünen metni burada formatlıyoruz
             public override string ToString()
             {
                 return $"{Name} |  {Url}";
@@ -52,7 +48,6 @@ namespace TepeGoz
 
         private async void bulBtn_Click(object sender, EventArgs e)
         {
-            // 1. İnternet Kontrolü
             if (!NetworkInterface.GetIsNetworkAvailable())
             {
                 MessageBox.Show("İnternet Bağlantısı Yok! Lütfen bağlantını kontrol et.");
@@ -66,7 +61,6 @@ namespace TepeGoz
             bulBtn.Enabled = false;
             progressBar1.Value = 0;
 
-            // 2. Varyasyonları Hazırla
             List<string> birlesikVaryasyonlar = new List<string>();
             List<string> parcaliVaryasyonlar = new List<string>();
 
@@ -91,13 +85,11 @@ namespace TepeGoz
             {
                 client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36");
 
-                // ÖNCE BİRLEŞİK VARYASYONLARI TARA
                 foreach (string username in birlesikVaryasyonlar)
                 {
                     await TaramaYap(client, username, lines);
                 }
 
-                // EĞER HİÇBİR ŞEY BULAMADIYSA, PARÇALI VARYASYONLARA GEÇ
                 if (sonuclarLB.Items.Count == 0 && parcaliVaryasyonlar.Count > 0)
                 {
                     sonuclarLB.Items.Add("[*] Birleşik sonuç bulunamadı, parçalı aramaya geçiliyor...");
@@ -113,7 +105,6 @@ namespace TepeGoz
             MessageBox.Show("Tarama tamamlandı!");
         }
 
-        // Tekrardan kurtulmak için tarama metodunu ayırdık
         private async Task TaramaYap(HttpClient client, string username, string[] lines)
         {
             foreach (string line in lines)
@@ -132,8 +123,6 @@ namespace TepeGoz
                 }
                 catch { }
 
-                // Burayı değiştirdik: Value'yu manuel artırmak yerine
-                // Maksimum değerin içerisindeyken güvenli şekilde artırıyoruz
                 if (progressBar1.Value < progressBar1.Maximum)
                 {
                     progressBar1.Value++;
@@ -146,7 +135,7 @@ namespace TepeGoz
         {
             if (sonuclarLB.SelectedItem is SiteItem selectedSite)
             {
-                Process.Start(selectedSite.Url); // Linki tarayıcıda aç
+                Process.Start(selectedSite.Url); 
             }
         }
 
