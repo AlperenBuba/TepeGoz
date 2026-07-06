@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.hesapAdiTxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.bulBtn = new System.Windows.Forms.Button();
             this.sonuclarLB = new System.Windows.Forms.ListBox();
@@ -37,15 +36,9 @@
             this.bagisBtn = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.usernameTxt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // hesapAdiTxt
-            // 
-            this.hesapAdiTxt.Location = new System.Drawing.Point(85, 10);
-            this.hesapAdiTxt.Name = "hesapAdiTxt";
-            this.hesapAdiTxt.Size = new System.Drawing.Size(446, 20);
-            this.hesapAdiTxt.TabIndex = 0;
             // 
             // label1
             // 
@@ -59,6 +52,7 @@
             // 
             // bulBtn
             // 
+            this.bulBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bulBtn.Location = new System.Drawing.Point(537, 8);
             this.bulBtn.Name = "bulBtn";
             this.bulBtn.Size = new System.Drawing.Size(75, 23);
@@ -69,6 +63,9 @@
             // 
             // sonuclarLB
             // 
+            this.sonuclarLB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.sonuclarLB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.sonuclarLB.ForeColor = System.Drawing.Color.LimeGreen;
             this.sonuclarLB.FormattingEnabled = true;
@@ -79,6 +76,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.ForeColor = System.Drawing.Color.Lime;
@@ -90,25 +88,28 @@
             // 
             // bagisBtn
             // 
+            this.bagisBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.bagisBtn.BackColor = System.Drawing.Color.Lime;
             this.bagisBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.bagisBtn.Location = new System.Drawing.Point(269, 401);
+            this.bagisBtn.Location = new System.Drawing.Point(15, 402);
             this.bagisBtn.Name = "bagisBtn";
             this.bagisBtn.Size = new System.Drawing.Size(75, 23);
             this.bagisBtn.TabIndex = 5;
             this.bagisBtn.Text = "Support";
             this.bagisBtn.UseVisualStyleBackColor = false;
-            this.bagisBtn.Click += new System.EventHandler(this.bagisBtn_Click_1);
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(15, 401);
+            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressBar1.Location = new System.Drawing.Point(96, 402);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(248, 23);
             this.progressBar1.TabIndex = 6;
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::TepeGoz.Properties.Resources.tepegöz;
             this.pictureBox1.Location = new System.Drawing.Point(552, 388);
@@ -118,12 +119,23 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // usernameTxt
+            // 
+            this.usernameTxt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.usernameTxt.Location = new System.Drawing.Point(81, 10);
+            this.usernameTxt.Name = "usernameTxt";
+            this.usernameTxt.Size = new System.Drawing.Size(446, 20);
+            this.usernameTxt.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(624, 441);
+            this.Controls.Add(this.usernameTxt);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.bagisBtn);
@@ -131,13 +143,14 @@
             this.Controls.Add(this.sonuclarLB);
             this.Controls.Add(this.bulBtn);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.hesapAdiTxt);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(640, 999999999);
+            this.MinimumSize = new System.Drawing.Size(640, 480);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TepeGoz | OSINT";
+            this.Resize += new System.EventHandler(this.Form1_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -145,8 +158,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox hesapAdiTxt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button bulBtn;
         private System.Windows.Forms.ListBox sonuclarLB;
@@ -154,6 +165,7 @@
         private System.Windows.Forms.Button bagisBtn;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox usernameTxt;
     }
 }
 
